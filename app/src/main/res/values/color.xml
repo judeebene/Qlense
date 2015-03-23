@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#3369E8</color>
+    <color name="green">#009925</color>
+    <color name="red">#D50F25</color>
+    <color name="gray">#4ccbff</color>
+    <color name="black"> #000000</color>
+    <color name="yellow">#EEB211</color>
+    <color name="white"> #ffffff</color>
+    <color name="light_green">#CCFFCC</color>
+
+    <color name="upgreen"> #339966</color>
+    <color name="leftgreen"> #99CC33</color>
+    <color name="lemongreen"> #CCCC33</color>
+</resources>

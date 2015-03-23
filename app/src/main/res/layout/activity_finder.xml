@@ -1,0 +1,187 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/upgreen"
+    tools:context="com.shareqube.android.qlense.Finder">
+
+
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mainScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            android:textAlignment="gravity"
+
+            >
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="30sp"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/pin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:text="@string/pin"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/pinValue"
+                    android:layout_width="210dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20sp"
+                    android:hint="@string/pinhint"
+                    android:ems="10"
+                    android:singleLine="true"
+                    android:background="@color/light_green"
+                    android:gravity="center_vertical|right|left"
+                    android:inputType="numberPassword"
+                    android:textColor="@color/green"
+                    android:paddingLeft="5dp"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginBottom="30sp"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/defaultnumbertext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/defaultnumber"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+
+                    android:id="@+id/defaultnumbervalue"
+                    android:hint="@string/simHint"
+                    android:layout_width="210dp"
+                    android:layout_height="40dp"
+                    android:inputType="number"
+                    android:textColor="@color/green"
+                    android:layout_marginLeft="10sp"
+                    android:background="@color/light_green" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30sp" >
+
+                <TextView
+                    android:id="@+id/optionnumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/optionalNumber"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/optionNumberValue"
+                    android:layout_width="210dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10sp"
+                    android:inputType="number"
+                    android:textColor="@color/green"
+                    android:hint="@string/optionHint"
+                    android:background="@color/light_green" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                >
+
+                <Button
+                    android:id="@+id/setup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:onClick="onClickSetting"
+                    android:padding="2sp"
+                    android:textSize="18sp"
+                    android:background="@color/yellow"
+                    android:text="@string/setup" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/instruction"
+                android:layout_marginTop="20sp"
+                android:textColor="@color/white"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainScroll">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="8sp"
+            android:textColor="@color/white"
+            android:text="@string/copyright" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

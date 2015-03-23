@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Qlense</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="slogan"> Communicates secretly with any device</string>
+    <string name="title_activity_finder">Finder</string>
+
+    <string name="pin">PIN:</string>
+
+
+    <string name="content_authority">com.shareqube.android.qlense</string>
+    <string name="defaultnumber"> NUMBER:</string>
+    <string name="optionalNumber"> NUMBER:</string>
+    <string name="setup">SET UP</string>
+    <string name="cancel">Cancel</string>
+    <string name="simHint"> default phone number</string>
+    <string name="optionHint"> Optional number</string>
+    <string name="instruction"> Insert 4 digit pin and mobile phone number to receive messages on phone lost, Get more Commands
+       to silently communicate with your phone. </string>
+    <string name="copyright">2014 ShareQube Communication</string>
+    <string name="uninstall_inst"> Enter your Qlense Pin to Uninstall Qlense App, Thank you for Using Qlense, Visit http://www.shareqube.com/qlense</string>
+    <string name="enter_pin"> Enter your Qlense Pin</string>
+    <string name="uninstall"> UnInstall</string>
+    <string name="pinhint">pin</string>
+    <string name="title_activity_finish">FinishActivity</string>
+
+    <string name="finish"> Finish</string>
+    <string name="visit"> Visit: http://www.shareqube.com/qlense </string>
+    <string name="thankyou">Thank You for Installing Qlense Mobile Tracker</string>
+    <string name="restart"> You can restart your mobile device now to activate Qlense in your device</string>
+    <string name="more"> For more commands and Tips on how to secretly communicate with your mobile device</string>
+    <string name="title_activity_exit">Exit</string>
+    <string name="setting">Setting</string>
+    <string name="about">About</string>
+    <string name="adminInstruction"> Qlense App requires you to Activate it as Admin to enable communicate with your phone remotely</string>
+
+</resources>
