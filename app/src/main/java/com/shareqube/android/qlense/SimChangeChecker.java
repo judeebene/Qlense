@@ -50,11 +50,13 @@ public class SimChangeChecker {
                 Toast.makeText(context, "Old: "+ oldserial +" New: " + serial,   Toast.LENGTH_LONG).show();
 
 
+
+
                 ContentValues sim_serial_values = new ContentValues();
                 sim_serial_values.put(QlenseContract.SimChangeTable.COLUMN_OLDSERIAL,oldserial);
                 sim_serial_values.put(QlenseContract.SimChangeTable.COLUMN_DATE, changeDate);
                 sim_serial_values.put(QlenseContract.SimChangeTable.COLUMN_TIME , changeTime);
-                int rowId = context.getContentResolver().update(QlenseContract.SimChangeTable.CONTENT_URI,sim_serial_values , QlenseContract.SimChangeTable.COLUMN_OLDSERIAL , new String[]{String.valueOf(oldserial)}) ;
+                int rowId = context.getContentResolver().update(QlenseContract.SimChangeTable.CONTENT_URI,sim_serial_values , QlenseContract.SimChangeTable.COLUMN_OLDSERIAL + "=?" , new String[]{String.valueOf(oldserial)}) ;
 
             }
             else{

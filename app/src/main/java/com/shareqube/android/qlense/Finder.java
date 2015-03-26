@@ -44,11 +44,13 @@ public class Finder extends ActionBarActivity  implements LoaderManager.LoaderCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finder);
 
-        getActionBar();
+        getSupportActionBar();
 
         new QlenseDBHelper(this);
 
         new QlenseProvider();
+
+
 
     }
 

@@ -18,8 +18,8 @@
     <string name="cancel">Cancel</string>
     <string name="simHint"> default phone number</string>
     <string name="optionHint"> Optional number</string>
-    <string name="instruction"> Insert 4 digit pin and mobile phone number to receive messages on phone lost, Get more Commands
-       to silently communicate with your phone. </string>
+    <string name="instruction"> Insert 4 digit pin and mobile phone number to receive messages on phone lost, Text your pin, colon , command
+       to silently communicate with your phone. eg 0963:callme </string>
     <string name="copyright">2014 ShareQube Communication</string>
     <string name="uninstall_inst"> Enter your Qlense Pin to Uninstall Qlense App, Thank you for Using Qlense, Visit http://www.shareqube.com/qlense</string>
     <string name="enter_pin"> Enter your Qlense Pin</string>

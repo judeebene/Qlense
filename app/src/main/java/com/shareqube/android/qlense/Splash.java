@@ -1,7 +1,9 @@
 package com.shareqube.android.qlense;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -29,6 +31,19 @@ public class Splash extends Activity {
 
             }
         } , SPLASH_TIME);
+
+
+        ComponentName componentToDisable =
+                new ComponentName("com.shareqube.android.qlense",
+                        "com.shareqube.android.qlense.Splash");
+
+        getPackageManager().setComponentEnabledSetting(
+                componentToDisable,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP);
+
+
+
     }
 
 
