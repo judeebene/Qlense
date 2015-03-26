@@ -4,10 +4,12 @@ package com.shareqube.android.qlense;
  *  Trace the caller.
  */
 
+import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.widget.TextView;
@@ -48,8 +50,7 @@ public class CallTrace extends PhoneStateListener {
     {
         String lastCaller = "outgoing:NONE";
 
-        if(Worker.mDBHelper != null && Worker.mQlenseProvider != null)
-        {
+
 
 
             Cursor cursor = context.getContentResolver().query(QlenseContract.LastOutCallTable.CONTENT_URI,null,null ,null,null);
@@ -66,13 +67,13 @@ public class CallTrace extends PhoneStateListener {
                 lastCaller = "outgoing call:" + caller + "[" + time + "] [" + date + "]";
                 Toast.makeText(context, "" + lastCaller , Toast.LENGTH_LONG).show();
             }
-        }
 
         return lastCaller;
     }
 
 
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public String getLastCaller()
     {
         String lastCall = "incoming call:NONE";
@@ -107,8 +108,7 @@ public class CallTrace extends PhoneStateListener {
     {
         // save the number to database
 
-        if(Worker.mDBHelper != null && Worker.mQlenseProvider != null)
-        {
+
 
 
             Cursor cursor = context.getContentResolver().query(QlenseContract.LastCallTable.CONTENT_URI ,null,null,null,null) ;
@@ -142,7 +142,7 @@ public class CallTrace extends PhoneStateListener {
                 Uri callUri = context.getContentResolver().insert(QlenseContract.LastCallTable.CONTENT_URI ,last_calls_values);
             }
 
-        }
+
     }
 
 

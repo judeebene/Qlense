@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="80sp"
+
             android:textAlignment="gravity"
 
             >
@@ -29,9 +29,10 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_marginBottom="45sp"
+                android:layout_marginBottom="30sp"
                 android:orientation="horizontal"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/pin"
@@ -42,7 +43,7 @@
                     android:paddingTop="20dp"
                     android:text="@string/pin"
                     android:textColor="@color/white"
-                    android:textSize="45sp"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
 
 
@@ -50,15 +51,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="40sp"
                     android:orientation="vertical" >
                 </LinearLayout>
 
                 <EditText
                     android:id="@+id/pinValue"
-                    android:layout_width="375dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="30sp"
+                    android:layout_width="450dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20sp"
                     android:hint="@string/pinhint"
                     android:ems="10"
                     android:singleLine="true"
@@ -67,13 +67,14 @@
                     android:inputType="numberPassword"
                     android:textColor="@color/green"
                     android:paddingLeft="5dp"
-                    android:textSize="35sp" />
+                    android:textSize="18sp"
+                    android:layout_weight="12.85" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginBottom="40sp"
+                android:layout_marginBottom="30sp"
                 android:layout_height="wrap_content" >
 
                 <TextView
@@ -83,15 +84,15 @@
                     android:text="@string/defaultnumber"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/white"
-                    android:textSize="45sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
 
                     android:id="@+id/defaultnumbervalue"
                     android:hint="@string/simHint"
-                    android:layout_width="300dp"
-                    android:layout_height="60dp"
+                    android:layout_width="450dp"
+                    android:layout_height="40dp"
                     android:inputType="number"
                     android:textColor="@color/green"
                     android:layout_marginLeft="10sp"
@@ -111,13 +112,13 @@
                     android:text="@string/optionalNumber"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/white"
-                    android:textSize="45sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/optionNumberValue"
-                    android:layout_width="300dp"
-                    android:layout_height="60dp"
+                    android:layout_width="450dp"
+                    android:layout_height="40dp"
                     android:layout_marginLeft="10sp"
                     android:inputType="number"
                     android:textColor="@color/green"
@@ -139,7 +140,7 @@
                     android:textStyle="bold"
                     android:onClick="onClickSetting"
                     android:padding="2sp"
-                    android:textSize="30dp"
+                    android:textSize="18sp"
                     android:background="@color/yellow"
                     android:text="@string/setup" />
 

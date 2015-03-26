@@ -50,7 +50,7 @@ public class TextMessageManager {
                 smsM.sendTextMessage(phoneNumber, null, msg, sendingIntent, smsState);
 
 
-                Toast.makeText(context, "sms sent to "+phoneNumber, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(context, "sms sent to "+phoneNumber, Toast.LENGTH_SHORT).show();
 
                 status = true;
             }
@@ -61,7 +61,7 @@ public class TextMessageManager {
         catch(Exception e){
             e.printStackTrace();
             status = false;
-            Toast.makeText(context, "sms sending failed", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(context, "sms sending failed", Toast.LENGTH_SHORT).show();
         }
 
         return status;

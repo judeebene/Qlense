@@ -36,27 +36,6 @@ public class Worker extends Service {
     static ContactsCopy copy;
 
 
-//    public Worker( Context context, String userPin, String defaultNumber1, String defaultNumber2 ) {
-//
-//
-//        // ---------------------- CREATE DATABASE ----------------------------------------------
-//        dbProvider = new DatabaseProvider( context );
-//        databaseManager = new DatabaseManager( context );
-//        dbProvider.create(databaseManager);
-//        //--------------------------------------------------------------------------------------
-//
-//
-//        // ------------------------- initialize database --------------------------------------
-//        String phoneSerial = simChangeChecker.getPhoneSerial( context );
-//
-//        // inserting pinValue, phoneSerial and default sim number and optional sim number to db
-//
-//        // dbProvider.init(userPin, phoneSerial, defaultNumber1, defaultNumber2 , phoneSerial,  CallTrace.updateCallDate(), CallTrace.updateCallTime() , "true");
-//
-//        //--------------------------------------------------------------------------------------
-//
-//        Toast.makeText( context, "pin:" + userPin + " serial:" + phoneSerial + " number1:" + defaultNumber1 + " Number2:" + defaultNumber2 , 10000).show();
-//    }
 
 
     @Override
@@ -117,7 +96,7 @@ public class Worker extends Service {
 
                 //-------------------- outgoing call listener ------------------------------------------
                 IntentFilter callIntent = new IntentFilter();
-                callIntent.addAction(CallReceiver.makeCallAction);
+                callIntent.addAction(CallReceiver.MAKE_CALL_ACTION);
                 call = new CallReceiver(Worker.this.getApplicationContext());
                 registerReceiver(call, callIntent);
 
@@ -152,9 +131,11 @@ public class Worker extends Service {
 
 
                 String defaultNumber = smsReceiver.getDefaultSim("line1");
-                Toast.makeText(Worker.this.getApplicationContext(), "  Default Number: " + defaultNumber, Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
+               //Toast.makeText(Worker.this.getApplicationContext(), "  Default Number: " + defaultNumber, Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
 
-                String sms = "My phone is lost, pls save this info::" + smsReceiver.getUserPin() + "::" + simChangeChecker.getOperator( Worker.this.getApplicationContext() );
+                String sms = "Your Phone sim card has been Change,  save the following details::" +
+                        "jh" +
+                        " " + smsReceiver.getUserPin() + "::" + simChangeChecker.getOperator( Worker.this.getApplicationContext() );
 
                 if(simCheck){
 
@@ -162,11 +143,11 @@ public class Worker extends Service {
                     //get sim operator
 
                     smsManager.sendSMS(Worker.this.getApplicationContext(), defaultNumber, sms);
-                    Toast.makeText(Worker.this.getApplicationContext(), " There is a change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
+                   // Toast.makeText(Worker.this.getApplicationContext(), " There is a change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
                 }
                 else{
                     sendSMS(defaultNumber, sms);
-                    Toast.makeText(Worker.this.getApplicationContext(), " There is NO change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
+                   // Toast.makeText(Worker.this.getApplicationContext(), " There is NO change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
                 }
 
 

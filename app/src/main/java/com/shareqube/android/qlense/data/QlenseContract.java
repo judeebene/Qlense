@@ -105,13 +105,15 @@ public class QlenseContract {
 
         public static  final String TABLE_NAME ="simchange";
 
+        public static final String COLUMN_TIME = "changetime" ;
+
 
         public static final String COLUMN_OLDSERIAL = "oldserial" ;
 
         public static final String COLUMN_DATE = "changedate";
 
 
-        public static final String COLUMN_TIME = "changetime" ;
+
 
         //building uris for query
 

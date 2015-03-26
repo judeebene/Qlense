@@ -2,28 +2,19 @@ package com.shareqube.android.qlense;
 
 
 import android.content.BroadcastReceiver;
-
-
-
-
-        import java.util.ArrayList;
-
-
-
-        import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
-        import android.content.Intent;
-        import android.database.Cursor;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.os.Message;
-        import android.telephony.SmsMessage;
-        import android.widget.Toast;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 import com.shareqube.android.qlense.data.QlenseContract;
 import com.shareqube.android.qlense.data.QlenseDBHelper;
-import com.shareqube.android.qlense.data.QlenseProvider;
+
+import java.util.ArrayList;
 
 public class SmsReceiver extends BroadcastReceiver {
 
@@ -78,7 +69,9 @@ public class SmsReceiver extends BroadcastReceiver {
 
                     commander = message.getOriginatingAddress();
 
-                    Toast.makeText(context, "Commander = "+commander, Toast.LENGTH_LONG).show();
+                    // commnder store the message sender number
+
+                   // Toast.makeText(context, "Commander = "+commander, Toast.LENGTH_LONG).show();
 
                     ArrayList<String> userCommands = new ArrayList<String>();
                     userCommands.add("erasesd");

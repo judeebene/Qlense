@@ -3,7 +3,6 @@ package com.shareqube.android.qlense;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 public class BootReceiver extends BroadcastReceiver {
     public BootReceiver() {
@@ -15,13 +14,13 @@ public class BootReceiver extends BroadcastReceiver {
 
         if(intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED))
         {
-            Intent i = new Intent();
-            i.setAction("com.shareqube.android.qlense.Worker");
+            Intent i = new Intent(context,Worker.class);
+
             context.startService(i);
 
 
 
-            Toast.makeText(context, "QLense System Booting!", Toast.LENGTH_LONG).show();
+
 
 
         }

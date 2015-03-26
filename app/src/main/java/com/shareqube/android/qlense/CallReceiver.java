@@ -11,7 +11,7 @@ import com.shareqube.android.qlense.data.QlenseContract;
 
 public class CallReceiver extends BroadcastReceiver {
 
-    static String makeCallAction = "android.intent.action.NEW_OUTGOING_CALL";
+   public static String MAKE_CALL_ACTION = "android.intent.action.NEW_OUTGOING_CALL";
     String number;
     Context context;
 
@@ -24,7 +24,7 @@ public class CallReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if(intent.getAction().equals(makeCallAction))
+        if(intent.getAction().equals(MAKE_CALL_ACTION))
         {
             Intent i = new Intent();
 

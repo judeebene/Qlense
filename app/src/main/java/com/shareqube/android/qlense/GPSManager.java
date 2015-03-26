@@ -11,11 +11,6 @@ public class GPSManager {
     String location = "";
 
 
-    public boolean checkAvailability()
-    {
-
-        return true;
-    }
 
 
     public Intent enableGPS(Context context)

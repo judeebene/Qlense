@@ -26,8 +26,6 @@ public class SimChangeChecker {
     {
         boolean isChanged = false;
 
-        if(Worker.mQlenseProvider != null && Worker.mDBHelper != null)
-        {
 
 
 
@@ -74,7 +72,7 @@ public class SimChangeChecker {
 
             }
 
-        }
+
 
         return isChanged;
     }

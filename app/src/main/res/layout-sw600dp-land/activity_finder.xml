@@ -39,6 +39,7 @@
                     android:layout_height="wrap_content"
 
                     android:paddingLeft="10dp"
+                    android:layout_marginLeft="75dp"
                     android:paddingTop="20dp"
                     android:text="@string/pin"
                     android:textColor="@color/white"
@@ -56,7 +57,7 @@
 
                 <EditText
                     android:id="@+id/pinValue"
-                    android:layout_width="375dp"
+                    android:layout_width="680dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="30sp"
                     android:hint="@string/pinhint"
@@ -90,7 +91,7 @@
 
                     android:id="@+id/defaultnumbervalue"
                     android:hint="@string/simHint"
-                    android:layout_width="300dp"
+                    android:layout_width="680dp"
                     android:layout_height="60dp"
                     android:inputType="number"
                     android:textColor="@color/green"
@@ -116,7 +117,7 @@
 
                 <EditText
                     android:id="@+id/optionNumberValue"
-                    android:layout_width="300dp"
+                    android:layout_width="680dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="10sp"
                     android:inputType="number"
@@ -133,13 +134,13 @@
 
                 <Button
                     android:id="@+id/setup"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:onClick="onClickSetting"
                     android:padding="2sp"
-                    android:textSize="30dp"
+                    android:textSize="50dp"
                     android:background="@color/yellow"
                     android:text="@string/setup" />
 

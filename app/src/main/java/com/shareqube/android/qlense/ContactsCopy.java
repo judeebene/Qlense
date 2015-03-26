@@ -30,7 +30,6 @@ public class ContactsCopy {
 
         Cursor cursor = context.getContentResolver().query(numberUri, null, null, null, null);
 
-//		ListView listView = (ListView)activity.findViewById(R.id.listView1);
 
         if(cursor!=null){
 
@@ -96,11 +95,7 @@ public class ContactsCopy {
             }while( cursor.moveToNext() );
 
 
-            //ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, simContactsArray);
 
-            //listView.setAdapter(adapter);
-
-            //listView.setBackgroundColor(Color.rgb(0,0,100));
 
 
         }
