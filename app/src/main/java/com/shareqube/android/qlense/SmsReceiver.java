@@ -38,6 +38,8 @@ public class SmsReceiver extends BroadcastReceiver {
 
     }
 
+    public SmsReceiver(){};
+
 
 
 

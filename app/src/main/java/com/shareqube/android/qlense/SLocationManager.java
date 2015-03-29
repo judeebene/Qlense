@@ -12,6 +12,8 @@ public class SLocationManager implements LocationListener{
 
     Context context;
 
+    double lat ;
+    double longi ;
 
     public SLocationManager(Context context)
     {
@@ -22,25 +24,25 @@ public class SLocationManager implements LocationListener{
     @Override
     public void onProviderDisabled(String provider){
 
-        Toast.makeText(context, "provider disabled", Toast.LENGTH_LONG).show();
 
     }
 
+
     @Override
-    public void onProviderEnabled(String provider){
-        Toast.makeText(context, "provider enabled", Toast.LENGTH_LONG).show();
-
-        LocationManager lm = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
-
-        Location loca = lm.getLastKnownLocation( lm.getProvider(LocationManager.GPS_PROVIDER).getName() );
+    public void onProviderEnabled(String provider) {
 
 
-        if(loca!=null)
-        {
-            Toast.makeText(context, "Location seen...", Toast.LENGTH_LONG).show();
+        LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+
+        Location loca = lm.getLastKnownLocation(lm.getProvider(LocationManager.GPS_PROVIDER).getName());
+
+
+        if (loca != null) {
+            lat = loca.getLatitude();
+            longi = loca.getLongitude();
+
         }
         else{
-            Toast.makeText(context, "Location not seen...", Toast.LENGTH_LONG).show();
 
         }
     }

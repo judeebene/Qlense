@@ -13,7 +13,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.widget.Toast;
 
 import com.shareqube.android.qlense.data.QlenseContract;
 import com.shareqube.android.qlense.data.QlenseDBHelper;
@@ -67,7 +66,7 @@ public class Worker extends Service {
             {
 
 
-                Toast.makeText(getApplicationContext(), "QLense Started!", Toast.LENGTH_LONG).show();
+               // Toast.makeText(getApplicationContext(), "QLense Started!", Toast.LENGTH_LONG).show();
 
 
 
@@ -115,9 +114,7 @@ public class Worker extends Service {
 
                 //----------------------- Sim Change ---------------------------------------------------
                 simChangeChecker = new SimChangeChecker();
-                //--------------------------------------------------------------------------------------
-                Toast.makeText(Worker.this.getApplicationContext(), simChangeChecker.simState(Worker.this.getApplicationContext()), Toast.LENGTH_LONG).show();
-                // ----------------------- Erase -------------------------------------------------------
+
                 eraser = new Eraser( Worker.this.getApplicationContext() );
                 //--------------------------------------------------------------------------------------
 
@@ -131,24 +128,21 @@ public class Worker extends Service {
 
 
                 String defaultNumber = smsReceiver.getDefaultSim("line1");
-               //Toast.makeText(Worker.this.getApplicationContext(), "  Default Number: " + defaultNumber, Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
 
                 String sms = "Your Phone sim card has been Change,  save the following details::" +
-                        "jh" +
+                        " " +
                         " " + smsReceiver.getUserPin() + "::" + simChangeChecker.getOperator( Worker.this.getApplicationContext() );
 
-                if(simCheck){
+                if(simCheck) {
 
                     //get sim pin
                     //get sim operator
 
                     smsManager.sendSMS(Worker.this.getApplicationContext(), defaultNumber, sms);
-                   // Toast.makeText(Worker.this.getApplicationContext(), " There is a change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
                 }
                 else{
                     sendSMS(defaultNumber, sms);
-                   // Toast.makeText(Worker.this.getApplicationContext(), " There is NO change in sim card ", Toast.LENGTH_LONG).show(); // we assume this phone has been stolen
-                }
+                   }
 
 
 
@@ -188,9 +182,8 @@ public class Worker extends Service {
         int row = cursor.getCount();
 
         String status = "";
-        Toast.makeText(this.getApplicationContext(), " SMS STatus queried" , Toast.LENGTH_LONG).show();
 
-        //Toast.makeText(context, "row: " + row, Toast.LENGTH_LONG).show();
+
 
         if(row>0)
         {
@@ -199,9 +192,11 @@ public class Worker extends Service {
             status = cursor.getString(cursor.getColumnIndex("status"));
         }
         else{
-            Toast.makeText(this.getApplicationContext(), " SMS STatus is empty", Toast.LENGTH_LONG).show();
+            // DO NOTHING
 
-            //dbProvider.insert(SettingsTable.tableName, new String[]{"pin", }, new String[]{"-", "-"});
+           // Toast.makeText(this.getApplicationContext(), " SMS STatus is empty", Toast.LENGTH_LONG).show();
+
+
         }
 
 
@@ -214,7 +209,7 @@ public class Worker extends Service {
     {
         //if last sms sending was not successfull, try to send is again
         String smsStatus = getSmsStatus();
-        Toast.makeText(this.getApplicationContext(), " SMS STATUS : " + smsStatus , Toast.LENGTH_LONG).show();
+       //  Toast.makeText(this.getApplicationContext(), " SMS STATUS : " + smsStatus , Toast.LENGTH_LONG).show();
 
         if(smsStatus.equals("false"))
         {

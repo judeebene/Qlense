@@ -38,10 +38,8 @@ public class CallTrace extends PhoneStateListener {
     {
         this.context = context;
 
-        Toast.makeText(context, "Call Trace Started!", Toast.LENGTH_LONG).show();
-        //	this.activity = activity;
+        //Toast.makeText(context, "Call Trace Started!", Toast.LENGTH_LONG).show();
 
-        //txt = (TextView)activity.findViewById(R.id.textView1);
     }
 
 
@@ -94,7 +92,7 @@ public class CallTrace extends PhoneStateListener {
                 String date = cursor.getString(cursor.getColumnIndex("date"));
 
                 lastCall = "incoming call:" +caller+"["+time+"] ["+date + "]";
-                //Toast.makeText(context, lastCall , Toast.LENGTH_LONG).show();
+
             }
 
         }
@@ -128,7 +126,7 @@ public class CallTrace extends PhoneStateListener {
                 int rowId = context.getContentResolver().update(QlenseContract.LastCallTable.CONTENT_URI ,last_calls_values,"caller" , new String[]{oldCaller}) ;
 
 
-                Toast.makeText(context, "Caller :" +phone + " |Time :" + time + " |Date :" + date + " - inserted... ", Toast.LENGTH_LONG).show();
+             // Toast.makeText(context, "Caller :" +phone + " |Time :" + time + " |Date :" + date + " - inserted... ", Toast.LENGTH_LONG).show();
 
             }
             else{

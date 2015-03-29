@@ -13,7 +13,7 @@
         "
         android:layout_height="100dp"
         android:id="@+id/splash_icon"
-        android:background="@drawable/ic_launcher"
+        android:background="@mipmap/ic_launcher"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

@@ -174,14 +174,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/mainScroll">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginTop="8sp"
-            android:textColor="@color/white"
-            android:text="@string/copyright" />
+
     </LinearLayout>
 
 

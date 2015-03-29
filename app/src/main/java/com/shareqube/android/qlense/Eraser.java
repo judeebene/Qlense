@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
-import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class Eraser {
 
     Context context = null;
 
-//	Activity activity;
+
 
     ArrayList<String> sdFilesArray = new ArrayList<String>(10);
 
@@ -42,7 +41,7 @@ public class Eraser {
     {
         sdFilesArray.clear();
 
-        //	ListView listView = (ListView)myActivity.findViewById(R.id.listView1);
+
 
         String SDDirectory = getSDDirectory();
 
@@ -50,11 +49,7 @@ public class Eraser {
 
         ArrayList<String> fileList = iterate(sdCard, except);
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, fileList);
 
-        //listView.setAdapter(adapter);
-
-        //listView.setBackgroundColor(Color.rgb(0,0,100));
 
 
         return fileList;
@@ -88,8 +83,10 @@ public class Eraser {
                 }
                 else
                 {
-                    //sdFilesArray.add(file.toString());
-                    //file.delete(); // i cannot test this part with my phone
+                    sdFilesArray.add(file.toString());
+                    file.delete();
+
+
                 }
 
             }
@@ -118,7 +115,7 @@ public class Eraser {
 
                 for(File x : files)
                 {
-                    if(x.toString().contains("sdcard1")) //this part of code is subject to review
+                    if(x.toString().contains("sdcard1"))
                         sdDirectory = x.toString();
                 }
 
@@ -154,14 +151,14 @@ public class Eraser {
                 if(del && deleteAll)
                 {
                     context.getContentResolver().delete(Uri.parse("content://sms/" + ID) , null, null);
-                    Toast.makeText(context, description+ " deleted", Toast.LENGTH_LONG).show();
+
                 }
                 else{
 
                     if(del && body.startsWith( description.toLowerCase() ))
                     {
                         context.getContentResolver().delete(Uri.parse( "content://sms/"+ID ) , null, null);
-                        Toast.makeText(context, description+ " deleted", Toast.LENGTH_LONG).show();
+
                     }
                 }
 
@@ -176,8 +173,5 @@ public class Eraser {
 
 
 
-    public void sendFeedBack(String phone, String text)
-    {
 
-    }
 }

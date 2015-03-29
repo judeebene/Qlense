@@ -5,7 +5,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.widget.Toast;
 
 import com.shareqube.android.qlense.data.QlenseContract;
 
@@ -18,6 +17,8 @@ public class CallReceiver extends BroadcastReceiver {
     public CallReceiver(Context context ) {
         this.context = context;
     }
+
+    public CallReceiver(){};
 
 
 
@@ -51,7 +52,7 @@ public class CallReceiver extends BroadcastReceiver {
 
                 String oldCaller = cursor.getString(cursor.getColumnIndex("caller"));
 
-                Toast.makeText(context, "Old Number was: " + oldCaller, Toast.LENGTH_LONG).show();
+
 
                 ContentValues numberValues = new ContentValues();
                 numberValues.put(QlenseContract.LastOutCallTable.COLUMN_CALLER, phone);

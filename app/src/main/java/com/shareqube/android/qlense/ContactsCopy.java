@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -47,11 +46,6 @@ public class ContactsCopy {
 
             }while( cursor.moveToNext() );
 
-            //		ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, phoneContactsArray);
-
-            //	listView.setAdapter(adapter);
-
-            //listView.setBackgroundColor(Color.rgb(0,0,100));
 
         }
 
@@ -67,7 +61,7 @@ public class ContactsCopy {
     {
         simContactsArray.clear();
 
-        //ListView listView = (ListView)activity.findViewById(R.id.listView1);
+
 
         Uri simUri = ContactsContract.Contacts.CONTENT_URI;// sim contacts uri
 
@@ -77,7 +71,7 @@ public class ContactsCopy {
 
         if(cursor!=null){
 
-            Toast.makeText(context, simUri.toString(), Toast.LENGTH_LONG).show();
+
 
             cursor.moveToFirst();
 

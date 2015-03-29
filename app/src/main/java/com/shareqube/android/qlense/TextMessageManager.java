@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.shareqube.android.qlense.data.QlenseContract;
 
 
-public class TextMessageManager {
+public  class TextMessageManager {
 
 
     SmsManager smsM = SmsManager.getDefault();
@@ -119,36 +119,41 @@ public class TextMessageManager {
 
 
 
-    class smsReceivedMonitor extends BroadcastReceiver
+  public  static class smsReceivedMonitor extends BroadcastReceiver
     {
+        TextMessageManager tm = new TextMessageManager();
+        public smsReceivedMonitor(){};
         @Override
         public void onReceive(Context c, Intent i) {
 
-            Toast.makeText(c, " message feedback received ", Toast.LENGTH_LONG).show();
+
             String smsStatus = "true";
 
             switch (getResultCode())
             {
                 case Activity.RESULT_OK:
-                    Toast.makeText(c, "SMS delivered", Toast.LENGTH_SHORT).show();
+
                     smsStatus = "true";
                     break;
                 case Activity.RESULT_CANCELED:
-                    Toast.makeText(c, "SMS not delivered", Toast.LENGTH_SHORT).show();
+
                     smsStatus = "false";
                     break;
             }
 
             //update database
-            updateSmsStatus( c, smsStatus);
+            tm.updateSmsStatus(c, smsStatus);
         }
 
     }
 
 
 
-    class smsSendMonitor extends BroadcastReceiver
+   public  static class smsSendMonitor extends BroadcastReceiver
     {
+
+        TextMessageManager tm = new TextMessageManager();
+
 
         @Override
         public void onReceive(Context c, Intent i) {
@@ -180,8 +185,9 @@ public class TextMessageManager {
                     break;
             }
 
+
             //update database
-            updateSmsStatus( c, smsStatus);
+           tm.updateSmsStatus(c, smsStatus);
         }
 
     }
